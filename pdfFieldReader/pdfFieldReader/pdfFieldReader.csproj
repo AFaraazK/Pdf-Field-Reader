@@ -8,4 +8,19 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="test.py" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="test.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IronPython" Version="3.4.1" />
+    <PackageReference Include="IronPython.StdLib" Version="3.4.1" />
+  </ItemGroup>
+
 </Project>

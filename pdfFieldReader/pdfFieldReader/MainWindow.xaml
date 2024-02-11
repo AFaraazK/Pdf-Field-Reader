@@ -31,7 +31,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Button Width="100" Height="20" Grid.Row="0" Content="SELECT PDF" Name="btn_selectPdf" Click="btn_selectPdf_Click"/>
-                <Button Width="100" Height="20" Grid.Row="1" Content="ENTER" Name="btn_loadPdf"/>
+                <Button Width="100" Height="20" Grid.Row="1" Content="ENTER" Name="btn_loadPdf" Click="btn_loadPdf_Click"/>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>

@@ -9,6 +9,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using IronPython.Hosting;
+using System.Diagnostics;
 
 namespace pdfFieldReader
 {
@@ -34,6 +36,24 @@ namespace pdfFieldReader
                 string file_name = fileDialog.SafeFileName;
                 tb_topleft.Text = file_name + ": " + file_path;
             }
+
+            Debug.WriteLine("SELECTED PDF");
+        }
+
+        private void btn_loadPdf_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("ENTER CLICKED");
+
+            var engine = Python.CreateEngine();
+            var scope = engine.CreateScope();
+
+
+            engine.ExecuteFile(@"test.py", scope);
+
+            dynamic testFunction = scope.GetVariable("test_python");
+            string output = testFunction();
+
+            tb_topleft.Text = output;
         }
     }
 }
