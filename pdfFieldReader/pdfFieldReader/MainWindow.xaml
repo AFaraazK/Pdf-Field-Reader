@@ -6,7 +6,46 @@
         xmlns:local="clr-namespace:pdfFieldReader"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="5px">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="75*"/>
+        </Grid.ColumnDefinitions>
 
+        <!-- LEFT -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="65*"/>
+            </Grid.RowDefinitions>
+            <Border Margin="1px" BorderBrush="Black" BorderThickness="1" Padding="5">
+                <TextBlock Name="tb_topleft" TextWrapping="Wrap" Text="Select the pdf file, and then ht enter. You can save the output." />
+            </Border>
+
+            <!-- BUTTON SELECTIONS -->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Width="100" Height="20" Grid.Row="0" Content="SELECT PDF" Name="btn_selectPdf" Click="btn_selectPdf_Click"/>
+                <Button Width="100" Height="20" Grid.Row="1" Content="ENTER" Name="btn_loadPdf"/>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Width="auto" Height="20" Grid.Row="2" Content="JSON" Margin="5" Name="btn_saveJSON"/>
+                    <Button Width="auto" Height="20" Grid.Row="2" Content="TXT" Margin="5" Name="btn_saveTXT" Grid.Column="1"/>
+                    <Button Width="auto" Height="20" Grid.Row="2" Content="CSV" Margin="5" Name="btn_saveCSV" Grid.Column="2"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!--RIGHT-->
+        <TextBlock Grid.Column="1" Margin="10px">AAAAAAA</TextBlock>
     </Grid>
 </Window>
